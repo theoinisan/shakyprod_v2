@@ -817,4 +817,15 @@ textarea {
     clear: none;
     margin-right: 30px;
   }
+  .container-type-menu {
+    position: relative;
+    top: 0;
+  }
+  .container-type-menu .container-1400 {
+    width: 100%;
+  }
+  .container-type-menu .type-menu {
+    float: left;
+    margin-top: -15px;
+  }
 }
