@@ -18,11 +18,11 @@
 	<?php
 	$video = get_field('fichier_video','option');
 	if($video):
-		$logo = get_field('poster_video','option');
-		if(!empty($logo)):
-			$alt = $logo['alt'];
+		$poster = get_field('poster_video','option');
+		if(!empty($poster)):
+			$alt = $poster['alt'];
 			$size = 'full-screen';
-			$thumb = $logo['sizes'][$size];
+			$thumb = $poster['sizes'][$size];
 		?>
 		<div id="background-mobile" style="background-image:url(<?php echo $thumb; ?>);"></div>
 		<video id="background-video" autoplay loop poster="<?php echo $thumb; ?>">

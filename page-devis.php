@@ -10,10 +10,17 @@ get_header();
 	<?php
 	$video = get_field('fichier_video','option');
 	if($video):
-	?>
-		<video id="background-video" autoplay loop>
+		$poster = get_field('poster_video','option');
+		if(!empty($poster)):
+			$alt = $poster['alt'];
+			$size = 'full-screen';
+			$thumb = $poster['sizes'][$size];
+		?>
+		<div id="background-mobile" style="background-image:url(<?php echo $thumb; ?>);"></div>
+		<video id="background-video" autoplay loop poster="<?php echo $thumb; ?>">
 			<source src="<?php echo $video['url']; ?>" type="video/mp4">
 		</video>
+		<?php endif; ?>
 	<?php endif; ?>
 </div>
 <div class="container-1400">

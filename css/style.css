@@ -267,13 +267,11 @@ footer .social ul li a {
   width: auto;
   height: auto;
   z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   background-size: cover;
 }
 
-#background-mobile {
+#background-mobile, #background-image {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -284,6 +282,10 @@ footer .social ul li a {
   background-repeat: no-repeat;
   background-position: center;
   display: none;
+}
+
+#background-image {
+  display: block;
 }
 
 #home-content {
