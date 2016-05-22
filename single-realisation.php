@@ -48,7 +48,8 @@ if(!empty($img)):
 				while (have_rows('selecteur_media')): the_row();
 				if(get_row_layout() == 'galerie'):
 				?>
-				<h4>Photos</h4>
+				<h4 class="photo">Photos</h4>
+				<span class="photo">+ Photos</span>
 					<div class="galerie">
 						<?php 
 						$images = get_sub_field('galerie_realisation');

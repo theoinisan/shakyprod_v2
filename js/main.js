@@ -203,6 +203,20 @@ function anim404(){
 	$('.page-404 .content').animate({marginLeft:0,opacity:1},2000,'easeInOutQuint');
 }
 
+function galerieMobile(){
+	$('span.photo').click(function(){
+		if(!$(this).hasClass('active')){
+			$(this).html('- Photos');
+			$('.galerie').show(500);
+			$(this).addClass('active');
+		} else {
+			$(this).html('+ Photos');
+			$('.galerie').hide(500);
+			$(this).removeClass('active');
+		}
+	})
+}
+
 $(function(){
 	centrerElement($('#intro img'),$(window));
 	var elRumble = $('.rumble');
@@ -220,6 +234,7 @@ $(function(){
 	creationMenuMobile();
 	posPageReal();
 	animContact();
+	galerieMobile();
 	centrerElement($('.page-404'),$(window));
 	$('.page-404 img').css('marginLeft','-800px').css('opacity',0);
 	$('.page-404 .content').css('marginLeft','800px').css('opacity',0);
