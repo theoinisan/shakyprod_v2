@@ -1,0 +1,7 @@
+body#tinymce.wp-editor { 
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; 
+    margin: 10px;
+    background-color: rgba(49,49,49,0.85);
+    color: #ebebeb;
+    max-width: 600px;
+}
