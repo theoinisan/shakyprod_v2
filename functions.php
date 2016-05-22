@@ -220,7 +220,7 @@ function custom_post_type() {
     'name_admin_bar'        => __( 'Actualité', 'text_domain' ),
     'archives'              => __( 'Archives des actualités', 'text_domain' ),
     'parent_item_colon'     => __( 'Parent de l\'actualité', 'text_domain' ),
-    'all_items'             => __( 'Toutes les actualité', 'text_domain' ),
+    'all_items'             => __( 'Toutes les actualités', 'text_domain' ),
     'add_new_item'          => __( 'Ajouter une nouvelle actualité', 'text_domain' ),
     'add_new'               => __( 'Ajouter une nouvelle actualité', 'text_domain' ),
     'new_item'              => __( 'Nouvelle actualité', 'text_domain' ),
