@@ -213,6 +213,48 @@ function custom_post_type() {
     'rewrite'               => $rewrite,
   );
   register_post_type( 'realisation', $args );
+  $labels = array(
+    'name'                  => _x( 'Actualités', 'Post Type General Name', 'text_domain' ),
+    'singular_name'         => _x( 'Actualité', 'Post Type Singular Name', 'text_domain' ),
+    'menu_name'             => __( 'Actualités', 'text_domain' ),
+    'name_admin_bar'        => __( 'Actualité', 'text_domain' ),
+    'archives'              => __( 'Archives des actualités', 'text_domain' ),
+    'parent_item_colon'     => __( 'Parent de l\'actualité', 'text_domain' ),
+    'all_items'             => __( 'Toutes les actualité', 'text_domain' ),
+    'add_new_item'          => __( 'Ajouter une nouvelle actualité', 'text_domain' ),
+    'add_new'               => __( 'Ajouter une nouvelle actualité', 'text_domain' ),
+    'new_item'              => __( 'Nouvelle actualité', 'text_domain' ),
+    'edit_item'             => __( 'Modifier l\'actualité', 'text_domain' ),
+    'update_item'           => __( 'Mettre à jour l\'actualité', 'text_domain' ),
+    'view_item'             => __( 'Voir l\'actualité', 'text_domain' ),
+    'search_items'          => __( 'Rechercher une actualité', 'text_domain' ),
+    'not_found'             => __( 'Pas d\'actualité trouvée', 'text_domain' ),
+    'not_found_in_trash'    => __( 'Pas dl\'actualité trouvée dans la corbeille', 'text_domain' ),
+  );
+  $rewrite = array(
+    'slug'                       => 'actualites',
+    'with_front'                 => true
+  );
+  $args = array(
+    'label'                 => __( 'Actualité', 'text_domain' ),
+    'description'           => __( 'Les actualités de Shaky Prod', 'text_domain' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title','editor' ),
+    'taxonomies'            => array( '', ),
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => 'actualites',    
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => true,
+    'capability_type'       => 'post',
+    'rewrite'               => $rewrite,
+  );
+  register_post_type( 'actualite', $args );
 }
 add_action( 'init', 'custom_post_type', 0 );
 
