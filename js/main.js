@@ -233,9 +233,6 @@ $(function(){
 	posPageReal();
 	animContact();
 	galerieMobile();
-	centrerElement($('.page-404'),$(window));
-	$('.page-404 img').css('marginLeft','-800px').css('opacity',0);
-	$('.page-404 .content').css('marginLeft','800px').css('opacity',0);
 	$('form').addClass('pure-form pure-form-aligned');
 	$('input').removeAttr( "size" );
 	$('textarea').removeAttr('cols');
@@ -259,6 +256,9 @@ $(function(){
     });
 	centrerElement($('#intro img'),$(window));
 	centrerElement($('.real-sug h3'),$('.real-sug'));
+	centrerElement($('.page-404'),$(window));
+	$('.page-404 img').css('marginLeft','-800px').css('opacity',0);
+	$('.page-404 .content').css('marginLeft','800px').css('opacity',0);
     $(window).resize();
 })
 
