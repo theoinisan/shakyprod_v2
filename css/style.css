@@ -37,6 +37,12 @@ h1 {
   font-size: 1.75em;
 }
 
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .loader {
   position: fixed;
   width: 100%;
@@ -55,6 +61,7 @@ h1 {
   top: 50%;
   margin-left: -60px;
   margin-top: -60px;
+  animation: spin 1.5s linear infinite;
 }
 
 .ajax-loader {
@@ -267,9 +274,7 @@ footer .social ul li a {
   width: auto;
   height: auto;
   z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   background-size: cover;
 }
 
