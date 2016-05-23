@@ -239,7 +239,7 @@ function custom_post_type() {
     'label'                 => __( 'Actualité', 'text_domain' ),
     'description'           => __( 'Les actualités de Shaky Prod', 'text_domain' ),
     'labels'                => $labels,
-    'supports'              => array( 'title','editor' ),
+    'supports'              => array( 'title','editor','thumbnail' ),
     'taxonomies'            => array( '', ),
     'public'                => true,
     'show_ui'               => true,
