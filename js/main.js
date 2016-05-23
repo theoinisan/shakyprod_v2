@@ -3,8 +3,8 @@ function centrerElement(el,cont){
 		for(var i = 0; i < $(el).length; i++){
 			var w = $(el[i]).width();
 			var h = $(el[i]).height();
-			var W = $(cont).width();
-			var H = $(cont).height();
+			var W = $(cont[i]).width();
+			var H = $(cont[i]).height();
 			$(el[i]).css('top',(H - h) / 2).css('left',(W - w) / 2);
 		}
 	})
@@ -218,7 +218,6 @@ function galerieMobile(){
 }
 
 $(function(){
-	centrerElement($('#intro img'),$(window));
 	var elRumble = $('.rumble');
 	rumble(elRumble);
 	var mainMenuA = $('#main-menu a');
@@ -229,7 +228,6 @@ $(function(){
 	$('#home-content .swiper-container').css('opacity',0).css('marginTop','-300px');
 	$('#home-content .grid .bloc').css('opacity',0).css('marginTop', '300px');
 	$('#home-content h1').css('opacity',0).css('marginLeft', '300px');
-	centrerElement($('.real-sug h3'),$('.real-sug'));
 	suggestionRealOver();
 	creationMenuMobile();
 	posPageReal();
@@ -259,7 +257,8 @@ $(function(){
         autoplay: 3000,
         loop: true
     });
-
+	centrerElement($('#intro img'),$(window));
+	centrerElement($('.real-sug h3'),$('.real-sug'));
     $(window).resize();
 })
 
