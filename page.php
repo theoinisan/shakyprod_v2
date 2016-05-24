@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <div id="home-video">
 	<div class="cache-dot"></div>
 	<?php
@@ -24,8 +22,11 @@ get_header();
 	if(have_posts()) :
 		while(have_posts()): the_post();
 	?>
-		<h1 class="archive"><?php the_title(); ?></h1>
-		<?php the_content(); ?>
+		<h1 class="standard"><?php the_title(); ?></h1>
+		<div class="container-form">
+			<?php the_content(); ?>
+		</div>
+
 	<?php
 	endwhile;
 	endif;
