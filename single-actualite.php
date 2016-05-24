@@ -1,4 +1,17 @@
 <?php get_header(); ?>
+
+<?php
+	if(have_posts()):
+		while(have_posts()): the_post();
+?>
+<div class="cache-dot"></div>
+<?php if(has_post_thumbnail()): ?>
+<?php
+$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->id),'full-screen');
+$url = $thumb[0];
+?>
+<div id="background-image" style="background-image:url(<?php echo $url; ?>);"></div>
+<?php else: ?>
 <div id="home-video">
 	<div class="cache-dot"></div>
 	<?php
@@ -17,30 +30,20 @@
 		<?php endif; ?>
 	<?php endif; ?>
 </div>
-<div class="container-1400">
-	<h1 class="standard">Actualités</h1>
-	<?php
-	if(have_posts()):
-	while(have_posts()): the_post();
-	?>
-	<div class="actualite">
-		<a href="<?php the_permalink(); ?>">
-			<div class="thumbnail">
-				<?php the_post_thumbnail('bloc-accueil'); ?>
-			</div>
-			<div class="content">
-				<div class="container">
-					<p>Publié le : <?php echo get_the_date(); ?></p>
-					<h2><?php the_title(); ?></h2>
-					<p><?php the_excerpt(); ?></p>
-					<span>Voir plus...</span>
+<?php endif; ?>
+
+	<div class="container-1400">
+		<div class="single-actu">
+			<h1 class="standard"><?php the_title(); ?></h1>
+			<div class="left">
+				<div class="content" style="border-color:<?php the_field('couleur'); ?>">
+					<?php the_content(); ?>
 				</div>
 			</div>
-		</a>
+		</div>
 	</div>
-	<?php
-	endwhile;
+<?php
+		endwhile;
 	endif;
-	?>
-</div>
+?>
 <?php get_footer(); ?>

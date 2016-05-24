@@ -217,6 +217,15 @@ function galerieMobile(){
 	})
 }
 
+function posImgActus(){
+	var cont = $('.actualite .content');
+	var img = $('.actualite .thumbnail');
+	for (var i = 0; i < $(cont).length; i++){
+		$(img[i]).css('height',$(cont[i]).height());
+		redimensionnement($(img[i]).find('img'),$(img[i]));
+	}
+}
+
 $(function(){
 	var elRumble = $('.rumble');
 	rumble(elRumble);
@@ -243,6 +252,7 @@ $(function(){
 		redimensionnement($('.realisation img'), $('.realisation'));
 		redimensionnement($('.grid .bloc img'),$('.grid .bloc'));
 		centrerElement($('.real-sug h3'),$('.real-sug'));
+		posImgActus();
 	})
 
 	var swiper = new Swiper('.swiper-container', {

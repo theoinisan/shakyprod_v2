@@ -37,9 +37,17 @@ h1 {
   font-size: 1.75em;
 }
 
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @keyframes spin {
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -61,7 +69,8 @@ h1 {
   top: 50%;
   margin-left: -60px;
   margin-top: -60px;
-  animation: spin 1.5s linear infinite;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
 }
 
 .ajax-loader {
@@ -274,7 +283,9 @@ footer .social ul li a {
   width: auto;
   height: auto;
   z-index: -100;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   background-size: cover;
 }
 
@@ -615,18 +626,73 @@ span.photo {
   height: 100%;
 }
 
-/* 404 */
-.page-404 {
-  position: fixed;
-  width: 100%;
-  color: #151515;
-  text-align: center;
+/* ACTUALITÉS */
+.actualite {
+  background-color: rgba(21, 21, 21, 0.85);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.actualite:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.actualite .thumbnail {
+  width: 50%;
+  float: left;
   overflow: hidden;
 }
 
-.page-404 img {
-  width: 100%;
-  max-width: 150px;
+.actualite .thumbnail img {
+  height: auto !important;
+  position: relative;
+}
+
+.actualite .content {
+  width: 50%;
+  float: right;
+}
+
+.actualite .content .container {
+  padding: 5%;
+  border: solid 1px rgba(235, 235, 235, 0.6);
+  margin: 15px;
+}
+
+.actualite .content .container p {
+  max-width: 530px;
+  line-height: 1.4em;
+}
+
+.actualite .content .container p:first-child {
+  margin-top: 0;
+}
+
+.actualite .content .container span {
+  margin-top: 30px;
+  display: block;
+}
+
+.actualite:nth-child(2n+1) .thumbnail {
+  float: right;
+}
+
+.actualite:nth-child(2n+1) .content {
+  float: left;
+}
+
+.actualite:last-child {
+  margin-bottom: 100px;
+}
+
+/* SINGLE ACTUALITÉ */
+.single-actu .content {
+  max-width: 700px;
+  background-color: rgba(21, 21, 21, 0.6);
+  padding: 30px;
+  border: solid 1px rgba(235, 235, 235, 0.5);
 }
 
 /* DEVIS */
@@ -669,6 +735,20 @@ textarea {
 
 .wpcf7:last-child textarea {
   width: 55%;
+}
+
+/* 404 */
+.page-404 {
+  position: fixed;
+  width: 100%;
+  color: #151515;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-404 img {
+  width: 100%;
+  max-width: 150px;
 }
 
 /* MEDIAS QUERIES */
