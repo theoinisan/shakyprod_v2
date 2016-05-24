@@ -36,7 +36,7 @@ $url = $thumb[0];
 		<div class="single-actu">
 			<h1 class="standard"><?php the_title(); ?></h1>
 			<div class="left">
-				<div class="content" style="border-color:<?php the_field('couleur'); ?>">
+				<div class="content">
 					<?php the_content(); ?>
 				</div>
 			</div>
