@@ -87,8 +87,8 @@ function creationMenuMobile(){
 	$('#main-menu').before('<div id=\"menu-mobile\"><span class=\"menu-txt\">Menu</span><span class=\"top\"></span><span class=\"middle\"></span><span class=\"bottom\"></span></div>');
 	$('#menu-mobile').click(function(){
 		if(!$('#menu-mobile').hasClass('active')){
-			$('#main').animate({marginLeft:'-280px',marginRight:'280px'},1000,'easeInOutExpo');
-			$('#main-menu').animate({right:-5},1000,'easeInOutExpo');
+			$('#main').animate({marginLeft:'-260px',marginRight:'280px'},1000,'easeInOutExpo');
+			$('#main-menu').animate({right:'-20px'},1000,'easeInOutExpo');
 			$(this).find('.top').rotate({angle:0,animateTo:45,easing:$.easing.easeInOutExpo,duration:500});
 			$(this).find('.bottom').rotate({angle:0,animateTo:-45,easing:$.easing.easeInOutExpo,duration:500});
 			$(this).find('.top').animate({width:'30px',top:'10px'},1000,'easeInOutExpo');

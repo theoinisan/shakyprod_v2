@@ -19,6 +19,9 @@ html, body {
   background-color: #ebebeb;
   position: relative;
   z-index: -1000;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -156,7 +159,7 @@ nav ul li:last-child:after {
 
 #menu-mobile {
   display: none;
-  position: fixed;
+  position: absolute;
   width: 27px;
   height: 23px;
   top: 13px;
@@ -802,6 +805,15 @@ textarea {
 @media screen and (max-width: 768px) {
   header, footer {
     height: 50px;
+    position: absolute;
+    width: 100%;
+  }
+  header {
+    top: 0;
+  }
+  footer {
+    bottom: 0;
+    position: relative;
   }
   #main {
     margin-top: 50px;
@@ -820,34 +832,44 @@ textarea {
   }
   #main-menu {
     clear: both;
-    position: fixed;
-    font-size: 0.9em;
-    right: -280px;
-    top: 80px;
-    width: 250px;
-    margin-top: 0;
-    bottom: 80px;
-    border: solid 3px #ebebeb;
-  }
-  #main-menu ul {
     position: absolute;
+    font-size: 0.9em;
+    right: -310px;
+    top: 80px;
+    width: 200px;
+    margin-top: 0;
+    border: solid 3px #ebebeb;
+    padding-bottom: 60px;
+    padding-right: 33px;
+  }
+  .menu-principal-container:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .menu-principal-container ul {
+    position: relative;
     top: 30px;
     left: 30px;
-    bottom: 30px;
     background-color: rgba(21, 21, 21, 0.85);
     width: 100%;
     border: solid 3px #ebebeb;
     padding-top: 20px;
   }
-  #main-menu li {
+  .menu-principal-container ul:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .menu-principal-container li {
     clear: both;
     line-height: 4em;
     border-bottom: solid 1px #ebebeb;
   }
-  #main-menu li:last-child {
+  .menu-principal-container li:last-child {
     border-bottom: none;
   }
-  #main-menu li:after {
+  .menu-principal-container li:after {
     content: '';
     margin-left: 0;
   }

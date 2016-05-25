@@ -29,6 +29,9 @@ html,body
 	background-color: $wh
 	position: relative
 	z-index: -1000
+	width: 100%
+	height: 100%
+	overflow-x: hidden
 
 img
 	width: 100%
@@ -144,7 +147,7 @@ nav
 
 #menu-mobile
 	display: none
-	position: fixed
+	position: absolute
 	width: 27px
 	height: 23px
 	top: 13px
@@ -666,6 +669,13 @@ textarea
 
 	header, footer
 		height: $width-head-foot-mobile
+		position: absolute
+		width: 100%
+	header
+		top: 0
+	footer
+		bottom: 0
+		position: relative
 
 	#main
 		margin-top: $width-head-foot-mobile
@@ -684,24 +694,33 @@ textarea
 
 	#main-menu
 		clear: both
-		position: fixed
+		position: absolute
 		font-size: 0.9em
-		right: -280px
+		right: -310px
 		top: $width-head-foot-mobile + 30px
-		width: 250px
+		width: 200px
 		margin-top: 0
-		bottom: $width-head-foot-mobile + 30px
 		border: solid 3px $wh
+		padding-bottom: 60px
+		padding-right: 33px
+	.menu-principal-container
+		&:after
+			content: ''
+			display: table
+			clear: both
 
 		ul
-			position: absolute
+			position: relative
 			top: 30px
 			left: 30px
-			bottom: 30px
 			background-color: $blt
 			width: 100%
 			border: solid 3px $wh
 			padding-top: 20px
+			&:after
+				content: ''
+				display: table
+				clear: both
 
 		li
 			clear: both
