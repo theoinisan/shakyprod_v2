@@ -4,13 +4,15 @@
 	if(have_posts()):
 		while(have_posts()): the_post();
 ?>
-<div class="cache-dot"></div>
-<?php if(has_post_thumbnail()): ?>
 <?php
-$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->id),'full-screen');
-$url = $thumb[0];
+$img = get_field('image_background');
+if(!empty($img)):
+	$alt = $img['alt'];
+	$size = 'full-screen';
+	$thumb = $img['sizes'][$size];
 ?>
-<div id="background-image" style="background-image:url(<?php echo $url; ?>);"></div>
+<div class="cache-dot"></div>
+<div id="background-image" style="background-image:url(<?php echo $thumb; ?>);"></div>
 <?php else: ?>
 <div id="home-video">
 	<div class="cache-dot"></div>

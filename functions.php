@@ -81,7 +81,7 @@ function theme_shaky_scripts_styles() {
     // Scripts dans le footer
     wp_enqueue_script('jquery1','https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js',array(),false,false);
     wp_enqueue_script('others-js', get_stylesheet_directory_uri().'/js/others.min.js','',false,true);
-    wp_enqueue_script('main-js', get_stylesheet_directory_uri().'/js/main.js','',false,true);
+    wp_enqueue_script('main-js', get_stylesheet_directory_uri().'/js/main.min.js','',false,true);
 }
 add_action('wp_enqueue_scripts', 'theme_shaky_scripts_styles');
 
@@ -263,3 +263,18 @@ function my_rewrite_flush() {
     flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'my_rewrite_flush' );
+
+function custom_login_css()  {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css" />';
+}
+add_action('login_head', 'custom_login_css');
+
+function custom_url_login()  {
+    return get_bloginfo( 'siteurl' ); // On retourne l'index du site
+}
+add_filter('login_headerurl', 'custom_url_login');
+
+function custom_title_login($message) {
+    return get_bloginfo('description'); // On retourne la description du site
+}
+add_filter('login_headertitle', 'custom_title_login');

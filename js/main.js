@@ -230,7 +230,6 @@ $(function(){
 	var mainMenuA = $('#main-menu a');
 	soulignement(mainMenuA);
 	animBlocAccueil();
-	realisationAnimOver();
 	$('#home-content').css('opacity',0);
 	$('#home-content .swiper-container').css('opacity',0).css('marginTop','-300px');
 	$('#home-content .grid .bloc').css('opacity',0).css('marginTop', '300px');
@@ -276,6 +275,7 @@ $(window).load(function(){
 	$('.loader').fadeOut(150,'easeInOutCubic');
 	introAnim();
 	realisationAnimIntro();
+	realisationAnimOver();
 	introPageReal(h1W);
 	anim404();
 	$(window).resize();
