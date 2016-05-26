@@ -1,4 +1,17 @@
 <?php get_header(); ?>
+
+<?php
+	if(have_posts()):
+		while(have_posts()): the_post();
+?>
+<div class="cache-dot"></div>
+<?php if(has_post_thumbnail()): ?>
+<?php
+$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->id),'full-screen');
+$url = $thumb[0];
+?>
+<div id="background-image" style="background-image:url(<?php echo $url; ?>);"></div>
+<?php else: ?>
 <div id="home-video">
 	<div class="cache-dot"></div>
 	<?php
@@ -17,19 +30,27 @@
 		<?php endif; ?>
 	<?php endif; ?>
 </div>
-<div class="container-1400">
-	<?php
-	if(have_posts()) :
-		while(have_posts()): the_post();
-	?>
-		<h1 class="standard"><?php the_title(); ?></h1>
-		<div class="container-form">
-			<?php the_content(); ?>
-		</div>
+<?php endif; ?>
 
-	<?php
-	endwhile;
+	<div class="container-1400">
+		<div class="single-actu">
+			<h1 class="standard"><?php the_title(); ?></h1>
+			<?php
+				$form = get_field('formulaire');
+				if(!empty($form)):
+			?>
+				<?php echo $form; ?>
+			<?php else: ?>
+				<div class="left">
+					<div class="content">
+						<?php the_content(); ?>
+					</div>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+<?php
+		endwhile;
 	endif;
-	?>
-</div>
+?>
 <?php get_footer(); ?>
