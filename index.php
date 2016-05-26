@@ -41,22 +41,21 @@
 			<div class="swiper-wrapper">
 			    <?php foreach( $posts as $post): ?>
 			        <?php setup_postdata($post); ?>
-			        <div class="swiper-slide">
+			        <?php
+					$img = get_field('image_slider');
+					if(!empty($img)):
+						$alt = $img['alt'];
+						$size = 'full-screen';
+						$thumb = $img['sizes'][$size];
+					?>
+			        <div class="swiper-slide" style="background-image:url(<?php echo $thumb; ?>);">
 				        <div class="realisation">
 				        	<a href="<?php the_permalink(); ?>">
-								<?php
-								$img = get_field('image_slider');
-								if(!empty($img)):
-									$alt = $img['alt'];
-									$size = 'slider';
-									$thumb = $img['sizes'][$size];
-								?>
 									<div class="container-1400">
 										<h2 style="background-color: <?php the_field('couleur'); ?>;"><?php the_title(); ?></h2>
 										<p style="border-color: <?php the_field('couleur'); ?>"><?php the_field('extrait'); ?></p>
 									</div>
 									<div class="cache-bl"></div>
-									<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
 								<?php endif; ?>
 							</a>
 						</div>

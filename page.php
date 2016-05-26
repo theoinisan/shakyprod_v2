@@ -39,13 +39,14 @@ $url = $thumb[0];
 				$form = get_field('formulaire');
 				if(!empty($form)):
 			?>
+			<div class="container-form">
 				<?php echo $form; ?>
+			</div>
 			<?php else: ?>
 				<div class="left">
 					<div class="content">
 						<?php the_content(); ?>
 					</div>
-				</div>
 			<?php endif; ?>
 		</div>
 	</div>

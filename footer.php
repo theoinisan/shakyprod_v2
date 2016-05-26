@@ -24,7 +24,7 @@
 						<?php
 						while(have_rows('rs','option')): the_row();
 						?>
-							<li><a href="<?php the_sub_field('lien'); ?>" style="background-image:url(<?php the_sub_field('picto'); ?>);"></a></li>
+							<li><a target="_blank" href="<?php the_sub_field('lien'); ?>" style="background-image:url(<?php the_sub_field('picto'); ?>);"></a></li>
 						<?php endwhile; ?>
 					</ul>
 				</nav>

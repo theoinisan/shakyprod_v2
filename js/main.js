@@ -246,7 +246,11 @@ $(function(){
 	$('input').removeAttr( "size" );
 	$('textarea').removeAttr('cols');
 	$('.wpcf7-validates-as-required').attr('required','required');
-
+	centrerElement($('.real-sug h3'),$('.real-sug'));
+	centrerElement($('#intro img'),$(window));
+	centrerElement($('.page-404'),$(window));
+	$('.page-404 img').css('marginLeft','-800px').css('opacity',0);
+	$('.page-404 .content').css('marginLeft','800px').css('opacity',0);
 	$(window).resize(function(){
 		intro();
 		redimensionnement($('.realisation img'), $('.realisation'));
@@ -264,11 +268,7 @@ $(function(){
         autoplay: 3000,
         loop: true
     });
-	centrerElement($('#intro img'),$(window));
-	centrerElement($('.real-sug h3'),$('.real-sug'));
-	centrerElement($('.page-404'),$(window));
-	$('.page-404 img').css('marginLeft','-800px').css('opacity',0);
-	$('.page-404 .content').css('marginLeft','800px').css('opacity',0);
+	
     $(window).resize();
 })
 
