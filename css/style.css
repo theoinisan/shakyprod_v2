@@ -17,10 +17,11 @@ html, body {
   padding: 0;
   color: #ebebeb;
   background-color: #ebebeb;
-  position: relative;
-  z-index: -1000;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1000;
   overflow-x: hidden;
 }
 
@@ -40,9 +41,17 @@ h1 {
   font-size: 1.75em;
 }
 
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @keyframes spin {
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -64,7 +73,8 @@ h1 {
   top: 50%;
   margin-left: -60px;
   margin-top: -60px;
-  animation: spin 1.5s linear infinite;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
 }
 
 .ajax-loader {
@@ -277,7 +287,9 @@ footer .social ul li a {
   width: auto;
   height: auto;
   z-index: -100;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   background-size: cover;
 }
 
@@ -800,6 +812,15 @@ textarea {
   .single-real .right .others-real .real-sug:last-child {
     margin-left: 0;
   }
+  .wpcf7 {
+    width: 100%;
+    float: none;
+    clear: both;
+  }
+  .wpcf7:last-child {
+    width: 100%;
+    float: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -812,7 +833,6 @@ textarea {
     top: 0;
   }
   footer {
-    bottom: 0;
     position: relative;
   }
   #main {
@@ -899,6 +919,9 @@ textarea {
   .single-real .right {
     width: 100%;
   }
+  footer {
+    padding-top: 1px;
+  }
   footer #button-contact {
     display: block;
   }
@@ -948,5 +971,12 @@ textarea {
   }
   span.photo {
     display: block;
+  }
+  .actualite .thumbnail {
+    width: 100%;
+    height: 200px !important;
+  }
+  .actualite .content {
+    width: 100%;
   }
 }
