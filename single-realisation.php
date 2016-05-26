@@ -92,18 +92,18 @@ if(!empty($img)):
 					<h4>Autres projets</h4>
 				    <?php foreach( $posts as $post): ?>
 				        <?php setup_postdata($post); ?>
-				        <div class="real-sug">
+				        <?php
+						$img = get_field('image_slider');
+						if(!empty($img)):
+							$alt = $img['alt'];
+							$size = 'bloc-accueil';
+							$thumb = $img['sizes'][$size];
+						?>
+				        <div class="real-sug" style="background-image:url(<?php echo $thumb; ?>);">
 					        <a href="<?php the_permalink(); ?>">
-								<?php
-								$img = get_field('image_slider');
-								if(!empty($img)):
-									$alt = $img['alt'];
-									$size = 'bloc-accueil';
-									$thumb = $img['sizes'][$size];
-								?>
+								
 									<h3><?php the_title(); ?></h3>
 									<div class="cache-bl"></div>
-									<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
 								<?php endif; ?>
 							</a>
 						</div>

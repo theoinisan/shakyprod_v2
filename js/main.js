@@ -1,13 +1,11 @@
 function centrerElement(el,cont){
-	$(window).resize(function(){
-		for(var i = 0; i < $(el).length; i++){
-			var w = $(el[i]).width();
-			var h = $(el[i]).height();
-			var W = $(cont[i]).width();
-			var H = $(cont[i]).height();
-			$(el[i]).css('top',(H - h) / 2).css('left',(W - w) / 2);
-		}
-	})
+	for(var i = 0; i < $(el).length; i++){
+		var w = $(el[i]).width();
+		var h = $(el[i]).height();
+		var W = $(cont[i]).width();
+		var H = $(cont[i]).height();
+		$(el[i]).css('top',(H - h) / 2).css('left',(W - w) / 2);
+	}
 }
 
 function redimensionnement(el,cont){ 
@@ -246,18 +244,8 @@ $(function(){
 	$('input').removeAttr( "size" );
 	$('textarea').removeAttr('cols');
 	$('.wpcf7-validates-as-required').attr('required','required');
-	centrerElement($('.real-sug h3'),$('.real-sug'));
-	centrerElement($('#intro img'),$(window));
-	centrerElement($('.page-404'),$(window));
 	$('.page-404 img').css('marginLeft','-800px').css('opacity',0);
 	$('.page-404 .content').css('marginLeft','800px').css('opacity',0);
-	$(window).resize(function(){
-		intro();
-		redimensionnement($('.realisation img'), $('.realisation'));
-		redimensionnement($('.grid .bloc img'),$('.grid .bloc'));
-		centrerElement($('.real-sug h3'),$('.real-sug'));
-		posImgActus();
-	})
 
 	var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
@@ -268,8 +256,16 @@ $(function(){
         autoplay: 3000,
         loop: true
     });
-	
-    $(window).resize();
+
+    $(window).resize(function(){
+		intro();
+		redimensionnement($('.realisation img'), $('.realisation'));
+		redimensionnement($('.grid .bloc img'),$('.grid .bloc'));
+		centrerElement($('.real-sug h3'),$('.real-sug'));
+		posImgActus();
+		centrerElement($('#intro img'),$(window));
+		centrerElement($('.page-404'),$(window));
+	})
 })
 
 $(window).load(function(){
@@ -282,4 +278,5 @@ $(window).load(function(){
 	realisationAnimIntro();
 	introPageReal(h1W);
 	anim404();
+	$(window).resize();
 })
