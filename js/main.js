@@ -65,7 +65,6 @@ function soulignement(el){
 }
 
 function animBlocAccueil(){
-	centrerElement($('.grid .bloc span'),$('.grid .bloc'));
 	$('.grid .bloc .content h2').css('marginTop','-100px');
 	$('.grid .bloc .content p').css('marginBottom','-100px');
 	$('.grid .bloc').mouseenter(function(){
@@ -264,6 +263,7 @@ $(function(){
 		posImgActus();
 		centrerElement($('#intro img'),$(window));
 		centrerElement($('.page-404'),$(window));
+		centrerElement($('.grid .bloc span'),$('.grid .bloc'));
 	})
 })
 
