@@ -638,10 +638,6 @@ span.photo {
   height: 100%;
 }
 
-.lightbox {
-  top: 0 !important;
-}
-
 /* ACTUALITÉS */
 .actualite {
   background-color: rgba(21, 21, 21, 0.85);
