@@ -30,6 +30,7 @@ html {
 
 img {
   width: 100%;
+  height: auto;
 }
 
 a {
@@ -44,17 +45,9 @@ h1 {
   font-size: 1.75em;
 }
 
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 @keyframes spin {
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -76,8 +69,7 @@ h1 {
   top: 50%;
   margin-left: -60px;
   margin-top: -60px;
-  -webkit-animation: spin 1.5s linear infinite;
-          animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
 }
 
 .ajax-loader {
@@ -290,9 +282,7 @@ footer .social ul li a {
   width: auto;
   height: auto;
   z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   background-size: cover;
 }
 
